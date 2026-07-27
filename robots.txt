@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://quickloantool.org/sitemap.xml
