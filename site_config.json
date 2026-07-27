@@ -1,0 +1,10 @@
+{
+  "site_name": "QuickLoanTool.org",
+  "domain": "quickloantool.org",
+  "prefix": "qct",
+  "author": "Marcus Cole",
+  "author_email": "contact@quickloantool.org",
+  "theme_color": "#f0c040",
+  "language": "en",
+  "timezone": "America/New_York"
+}
