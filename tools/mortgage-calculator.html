@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mortgage Calculator | QuickLoanTool.org</title><meta name="description" content="Full PITI payment including principal, interest, taxes, and insurance."><link rel="stylesheet" href="../style.css"><script src="../ads-loader.js" defer></script><link rel="canonical" href="https://quickloantool.org/tools/mortgage-calculator.html">
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://quickloantool.org/"},
+    {"@type":"ListItem","position":2,"name":"Tools","item":"https://quickloantool.org/tools/"},
+    {"@type":"ListItem","position":3,"name":"Mortgage Calculator","item":"https://quickloantool.org/tools/mortgage-calculator.html"}
+  ]
+}</script>
+<meta property="og:title" content="Mortgage Calculator | QuickLoanTool.org">
+<meta property="og:description" content="Free Mortgage Calculator calculator. No signup required.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quickloantool.org/tools/mortgage-calculator.html">
+<meta property="og:image" content="https://quickloantool.org/images/og-mortgage.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mortgage Calculator | QuickLoanTool.org">
+<meta name="twitter:description" content="Free Mortgage Calculator calculator. No signup required.">
+<meta name="twitter:image" content="https://quickloantool.org/images/og-mortgage.jpg">
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Mortgage Calculator",
+  "description":"Full PITI payment including principal, interest, taxes, and insurance.",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Web",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}</script>
+</head><body>
+<header class="qct-header">
+  <div class="qct-header-inner">
+    <a href="../index.html" class="qct-logo">QuickLoan<span>Smart Lending Tools</span></a>
+    <button class="qct-mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('active')" aria-label="Toggle menu">☰</button>
+    <nav><ul class="qct-nav" id="mainNav">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+<div class="qct-breadcrumb"><div class="qct-container"><a href="../index.html">Home</a><span>/</span><a href="../index.html">Tools</a><span>/</span>Mortgage</div></div>
+<div class="qct-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+<div class="qct-page-header"><div class="qct-container"><h1>Mortgage Calculator</h1><p>Full PITI payment including principal, interest, taxes, and insurance.</p></div></div>
+<main class="qct-container qct-section" style="padding-top:20px;">
+<div class="qct-layout-bigcard">
+<div class="qct-tool-card" style="cursor:default;padding:36px;"><h2 style="font-family:Inter,sans-serif;font-weight:600;margin-bottom:16px;">Enter Your Details</h2>
+<div class="qct-form-row"><div class="qct-form-group"><label>Home Price ($)</label><input type="number" id="price" placeholder="350000" min="50000"></div><div class="qct-form-group"><label>Down Payment ($)</label><input type="number" id="down" placeholder="70000" min="0"></div></div>
+<div class="qct-form-row"><div class="qct-form-group"><label>Interest Rate (%)</label><input type="number" id="rate" placeholder="6.5" min="1" max="15" step="0.01"></div><div class="qct-form-group"><label>Loan Term (years)</label><select id="term"><option value="15">15 years</option><option value="20">20 years</option><option value="30" selected>30 years</option></select></div></div>
+<div class="qct-form-row"><div class="qct-form-group"><label>Annual Property Tax ($)</label><input type="number" id="tax" placeholder="4200" min="0"></div><div class="qct-form-group"><label>Annual Insurance ($)</label><input type="number" id="ins" placeholder="1200" min="0"></div></div>
+<div class="qct-form-group"><label>Monthly HOA ($)</label><input type="number" id="hoa" placeholder="0" min="0"></div>
+<button onclick="qctCalcM()" class="qct-btn qct-btn-primary" style="width:100%;padding:14px;">Calculate PITI</button>
+<button onclick="qctResetForm()" class="qct-btn qct-btn-outline" style="margin-top:12px;width:100%;">Reset / Clear</button><p style="color:#888;font-size:.82rem;margin-top:12px;text-align:center;">All data stays in your browser — we never see it.</p>
+<div id="result" style="display:none;margin-top:20px;"><div class="qct-result-box"><h4>Monthly PITI Payment</h4><div class="qct-result-number" id="pitiVal">--</div></div></div>
+<script>function qctCalcM(){var p=(parseFloat(document.getElementById('price').value)||0)-(parseFloat(document.getElementById('down').value)||0);var r=(parseFloat(document.getElementById('rate').value)||0)/100/12;var n=(parseInt(document.getElementById('term').value)||30)*12;var tax=(parseFloat(document.getElementById('tax').value)||0)/12;var ins=(parseFloat(document.getElementById('ins').value)||0)/12;var hoa=(parseFloat(document.getElementById('hoa').value)||0);var pmt=p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);if(!r)pmt=p/n;var piti=pmt+tax+ins+hoa;document.getElementById('pitiVal').textContent='$'+piti.toFixed(2);document.getElementById('result').style.display='block';}</script>
+</div>
+<div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+<button onclick="qctSaveComparison()" class="qct-btn qct-btn-outline" style="flex:1;min-width:140px;">Save to Comparison</button>
+<button onclick="qctExportReport()" class="qct-btn qct-btn-outline" style="flex:1;min-width:140px;">Export Report</button>
+<button onclick="qctShowHistory()" class="qct-btn qct-btn-outline" style="flex:1;min-width:140px;">View History</button>
+</div>
+<div id="comparisonArea" style="display:none;margin-top:20px;"><div style="background:#f7f7f7;border-radius:12px;padding:20px;"><h4 style="margin-bottom:12px;">Saved Comparisons</h4><div id="comparisonList"></div></div></div>
+</div>
+<div style="margin-top:40px;"><h3 style="margin-bottom:20px;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:#999;font-weight:600;"<div class="qct-ad-slot" id="tool_middle" data-ad-slot="tool_middle"></div>
+>Related Tools</h3><div class="qct-related-grid"><a class="qct-related-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer;" href="./personal-loan-calculator.html"><h4>Personal Loan</h4><p>Alternative financing option.</p></a></div>
+<a class="qct-related-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer;" href="./loan-comparison-calculator.html"><h4>Loan Comparison</h4><p>Compare financing offers.</p></a></div>
+<a class="qct-related-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer;" href="./mortgage-calculator.html"><h4>Mortgage Calculator</h4><p>Home loan payments.</p></a></div></div></div>
+
+<div style="margin-top:40px;"><h3 style="margin-bottom:20px;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:#999;font-weight:600;">Related Articles</h3><div class="qct-related-grid" id="relatedArticles"></div></div>
+<script>fetch('../articles.json').then(r=>r.json()).then(a=>{var c=document.getElementById('relatedArticles');if(!a)return;var h='';a.slice(0,3).forEach(x=>{h+='<a class="qct-related-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer;" href="../blog/'+x.slug+'.html"><h4>'+x.title+'</h4><p>'+x.excerpt+'</p></a>';});c.innerHTML=h;}).catch(()=>{});</script>
+<div style="margin-top:40px;"><h3 style="margin-bottom:20px;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:#999;font-weight:600;">Visualization</h3><div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);"><canvas id="mortgageChart" width="600" height="300" style="width:100%;max-width:600px;height:auto;margin:0 auto;display:block;"></canvas></div></div>
+<script>
+function drawMortgageChart(){
+  var c=document.getElementById('mortgageChart');if(!c)return;
+  var ctx=c.getContext('2d');
+  var price=parseFloat(document.getElementById('price').value)||350000;
+  var down=parseFloat(document.getElementById('down').value)||70000;
+  var tax=(parseFloat(document.getElementById('tax').value)||4200)/12;
+  var ins=(parseFloat(document.getElementById('ins').value)||1200)/12;
+  var hoa=(parseFloat(document.getElementById('hoa').value)||0);
+  var loan=price-down;
+  var r=(parseFloat(document.getElementById('rate').value)||6.5)/100/12;
+  var n=(parseInt(document.getElementById('term').value)||30)*12;
+  var pmt=loan*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);if(!r)pmt=loan/n;
+  var data=[pmt,tax,ins,hoa];var labels=['Principal & Interest','Tax','Insurance','HOA'];
+  var colors=['#f0c040','#d4a017','#b8860b','#8b6914'];
+  var total=data.reduce((a,b)=>a+b,0);
+  var cx=c.width/2,cy=c.height/2,radius=90;
+  var start=0;
+  ctx.clearRect(0,0,c.width,c.height);
+  data.forEach(function(v,i){
+    var angle=(v/total)*Math.PI*2;
+    ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,radius,start,start+angle);ctx.closePath();
+    ctx.fillStyle=colors[i];ctx.fill();
+    var mid=start+angle/2;
+    var lx=cx+Math.cos(mid)*(radius+30);
+    var ly=cy+Math.sin(mid)*(radius+30);
+    ctx.fillStyle='#333';ctx.font='12px Inter';ctx.textAlign='center';
+    ctx.fillText(labels[i]+': $'+v.toFixed(0),lx,ly);
+    start+=angle;
+  });
+}
+document.getElementById('result').addEventListener('DOMNodeInserted',drawMortgageChart);
+document.querySelector('button[onclick="qctCalcM()"]').addEventListener('click',drawMortgageChart);
+</script>
+
+<div class="qct-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+</main>
+<footer class="qct-footer">
+  <div class="qct-container">
+    <div class="qct-footer-grid">
+      <div class="qct-footer-col"><h4>Tools</h4><ul>
+        <li><a href="./personal-loan-calculator.html">Personal Loan</a></li>
+        <li><a href="./payday-loan-calculator.html">Payday Loan</a></li>
+        <li><a href="./auto-loan-calculator.html">Auto Loan</a></li>
+        <li><a href="./mortgage-calculator.html">Mortgage</a></li>
+      </ul></div>
+      <div class="qct-footer-col"><h4>Resources</h4><ul><li><a href="../blog/index.html">Blog</a></li><li><a href="../faq.html">FAQ</a></li></ul></div>
+      <div class="qct-footer-col"><h4>Legal</h4><ul>
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../terms.html">Terms</a></li>
+        <li><a href="../disclaimer.html">Disclaimer</a></li>
+        <li><a href="../disclosure.html">Ad Disclosure</a></li>
+      </ul></div>
+      <div class="qct-footer-col"><h4>About</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="qct-footer-bottom">
+      <p class="qct-disclaimer">Not financial advice. For educational purposes only.</p>
+      <p>QuickLoanTool.org. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+// Sticky: save last calculation to localStorage
+(function(){
+  var inputs=document.querySelectorAll('input, select');
+  inputs.forEach(function(inp){
+    var key='qct_'+location.pathname+'_'+inp.id;
+    var saved=localStorage.getItem(key);
+    if(saved!==null && inp.type!=='button'){inp.value=saved;}
+    inp.addEventListener('change',function(){localStorage.setItem(key,inp.value);});
+  });
+})();
+</script>
+<script>function qctResetForm(){document.querySelectorAll('input, select').forEach(function(el){if(el.type!=='button'){el.value='';localStorage.removeItem('qct_'+location.pathname+'_'+el.id);}});document.getElementById('result').style.display='none';}</script>
+
+<script>
+(function(){
+  var key='qct_comparison_'+location.pathname;
+  window.qctSaveComparison=function(){
+    var result=document.getElementById('result');
+    if(!result||result.style.display==='none'){alert('Calculate first before saving.');return;}
+    var data=JSON.parse(localStorage.getItem(key)||'[]');
+    var now=new Date().toLocaleString();
+    var snapshot={time:now,inputs:{}};
+    document.querySelectorAll('input, select').forEach(function(el){if(el.id)snapshot.inputs[el.id]=el.value;});
+    var resText=result.innerText.replace(/\s+/g,' ').substring(0,200);
+    snapshot.result=resText;
+    data.push(snapshot);
+    if(data.length>5)data.shift();
+    localStorage.setItem(key,JSON.stringify(data));
+    alert('Saved! You have '+data.length+' comparison(s).');
+  };
+  window.qctShowHistory=function(){
+    var data=JSON.parse(localStorage.getItem(key)||'[]');
+    var area=document.getElementById('comparisonArea');
+    var list=document.getElementById('comparisonList');
+    if(!data.length){list.innerHTML='<p style="color:#888;">No saved comparisons yet.</p>';}
+    else{
+      var h='<table style="width:100%;font-size:.85rem;border-collapse:collapse;"><tr style="border-bottom:1px solid #ddd;"><th style="text-align:left;padding:8px;">Time</th><th style="text-align:left;padding:8px;">Result</th><th style="text-align:left;padding:8px;">Action</th></tr>';
+      data.forEach(function(item,i){
+        h+='<tr style="border-bottom:1px solid #eee;"><td style="padding:8px;">'+item.time+'</td><td style="padding:8px;">'+item.result+'</td><td style="padding:8px;"><button onclick="qctLoadComparison('+i+')" style="background:#f0c040;border:none;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:.8rem;">Load</button></td></tr>';
+      });
+      h+='</table>';
+      list.innerHTML=h;
+    }
+    area.style.display=area.style.display==='none'?'block':'none';
+  };
+  window.qctLoadComparison=function(idx){
+    var data=JSON.parse(localStorage.getItem(key)||'[]');
+    if(!data[idx])return;
+    var inputs=data[idx].inputs;
+    for(var k in inputs){var el=document.getElementById(k);if(el)el.value=inputs[k];}
+    alert('Inputs restored. Click Calculate to update results.');
+  };
+  window.qctExportReport=function(){
+    var result=document.getElementById('result');
+    if(!result||result.style.display==='none'){alert('Calculate first before exporting.');return;}
+    var text='QuickLoanTool.org Report\nGenerated: '+new Date().toLocaleString()+'\nPage: '+document.title+'\n\nInputs:\n';
+    document.querySelectorAll('input, select').forEach(function(el){if(el.id&&el.value)text+=el.id+': '+el.value+'\n';});
+    text+='\nResults:\n'+result.innerText.replace(/\s+/g,'\n');
+    var blob=new Blob([text],{type:'text/plain'});
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='loan-report.txt';a.click();
+  };
+})();
+</script>
+
+</body></html>
