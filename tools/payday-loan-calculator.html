@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Payday Loan Cost Calculator | QuickLoanTool.org</title><meta name="description" content="See the true cost of payday loans with APR breakdowns and alternatives."><link rel="stylesheet" href="../style.css"><script src="../ads-loader.js" defer></script><link rel="canonical" href="https://quickloantool.org/tools/payday-loan-calculator.html">
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://quickloantool.org/"},
+    {"@type":"ListItem","position":2,"name":"Tools","item":"https://quickloantool.org/tools/"},
+    {"@type":"ListItem","position":3,"name":"Payday Loan Calculator","item":"https://quickloantool.org/tools/payday-loan-calculator.html"}
+  ]
+}</script>
+<meta property="og:title" content="Payday Loan Cost Calculator | QuickLoanTool.org">
+<meta property="og:description" content="Free Payday Loan Calculator calculator. No signup required.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quickloantool.org/tools/payday-loan-calculator.html">
+<meta property="og:image" content="https://quickloantool.org/images/og-payday-loan.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Payday Loan Cost Calculator | QuickLoanTool.org">
+<meta name="twitter:description" content="Free Payday Loan Calculator calculator. No signup required.">
+<meta name="twitter:image" content="https://quickloantool.org/images/og-payday-loan.jpg">
+<script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Payday Loan Cost Calculator",
+  "description":"See the true cost of payday loans with APR breakdowns and alternatives.",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Web",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}</script>
+</head><body>
+<header class="qct-header">
+  <div class="qct-header-inner">
+    <a href="../index.html" class="qct-logo">QuickLoan<span>Smart Lending Tools</span></a>
+    <button class="qct-mobile-menu-btn" onclick="document.getElementById('mainNav').classList.toggle('active')" aria-label="Toggle menu">☰</button>
+    <nav><ul class="qct-nav" id="mainNav">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html">Tools</a></li>
+      <li><a href="../blog/index.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+<div class="qct-breadcrumb"><div class="qct-container"><a href="../index.html">Home</a><span>/</span><a href="../index.html">Tools</a><span>/</span>Payday Loan</div></div>
+<div class="qct-ad-slot" id="tool_top" data-ad-slot="tool_top"></div>
+<div class="qct-page-header"><div class="qct-container"><h1>Payday Loan Cost Calculator</h1><p>See the true cost of payday loans with APR breakdowns and alternatives.</p></div></div>
+<main class="qct-container qct-section" style="padding-top:20px;">
+<div class="qct-layout-bigcard">
+<div class="qct-tool-card" style="cursor:default;padding:36px;"><h2 style="font-family:Inter,sans-serif;font-weight:600;margin-bottom:16px;">Enter Your Details</h2>
+<div style="background:#fff3cd;border:1px solid #ffc107;border-radius:10px;padding:16px;margin-bottom:20px;color:#856404;font-size:.9rem;">⚠️ Payday loans are extremely expensive. This calculator shows the true cost so you can make an informed decision.</div>
+<div class="qct-form-row"><div class="qct-form-group"><label>Loan Amount ($)</label><input type="number" id="amount" placeholder="500" min="100" max="2000"></div><div class="qct-form-group"><label>Finance Charge ($ per $100)</label><input type="number" id="charge" placeholder="15" min="5" max="30"></div></div>
+<div class="qct-form-group"><label>Loan Term (days)</label><select id="term"><option value="7">7 days</option><option value="14" selected>14 days</option><option value="30">30 days</option></select></div>
+<button onclick="qctCalcPD()" class="qct-btn qct-btn-primary" style="width:100%;padding:14px;">Calculate True Cost</button>
+<button onclick="qctResetForm()" class="qct-btn qct-btn-outline" style="margin-top:12px;width:100%;">Reset / Clear</button><p style="color:#888;font-size:.82rem;margin-top:12px;text-align:center;">All data stays in your browser — we never see it.</p>
+<div id="result" style="display:none;margin-top:20px;">
+<div class="qct-result-box" style="background:#fff3cd;border-color:#ffc107;"><h4>True APR</h4><div class="qct-result-number" style="color:#d9534f;" id="aprVal">--</div><div style="margin-top:12px;font-size:.9rem;color:#666;" id="warning"></div></div>
+</div>
+<script>function qctCalcPD(){{var p=parseFloat(document.getElementById('amount').value);var c=parseFloat(document.getElementById('charge').value);var d=parseInt(document.getElementById('term').value);if(!p||!c||!d){{alert('Please fill in all fields.');return;}}var fee=(p/100)*c;var total=p+fee;var apr=(fee/p)*(365/d)*100;document.getElementById('aprVal').textContent=apr.toFixed(0)+'%';var w='';if(apr>300)w='This is a predatory rate. Consider alternatives: credit unions, employer advances, or negotiating with creditors.';else if(apr>100)w='Very expensive. Explore alternatives before proceeding.';else w='Still expensive compared to other options.';document.getElementById('warning').textContent='You pay $'+fee.toFixed(0)+' to borrow $'+p+' for '+d+' days. '+w;document.getElementById('result').style.display='block';}}</script>
+</div>
+<div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+<button onclick="qctSaveComparison()" class="qct-btn qct-btn-outline" style="flex:1;min-width:140px;">Save to Comparison</button>
+<button onclick="qctExportReport()" class="qct-btn qct-btn-outline" style="flex:1;min-width:140px;">Export Report</button>
+<button onclick="qctShowHistory()" class="qct-btn qct-btn-outline" style="flex:1;min-width:140px;">View History</button>
+</div>
+<div id="comparisonArea" style="display:none;margin-top:20px;"><div style="background:#f7f7f7;border-radius:12px;padding:20px;"><h4 style="margin-bottom:12px;">Saved Comparisons</h4><div id="comparisonList"></div></div></div>
+</div>
+<div style="margin-top:40px;"><h3 style="margin-bottom:20px;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:#999;font-weight:600;"<div class="qct-ad-slot" id="tool_middle" data-ad-slot="tool_middle"></div>
+>Related Tools</h3><div class="qct-related-grid"><a class="qct-related-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer;" href="./loan-comparison-calculator.html"><h4>Loan Comparison Tool</h4><p>Compare multiple loan offers side by side.</p></a></div>
+<a class="qct-related-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer;" href="./debt-consolidation-calculator.html"><h4>Debt Consolidation</h4><p>See if consolidating saves you money.</p></a></div>
+<a class="qct-related-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer;" href="./auto-loan-calculator.html"><h4>Auto Loan Calculator</h4><p>Calculate car loan payments.</p></a></div></div></div>
+
+<div style="margin-top:40px;"><h3 style="margin-bottom:20px;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:#999;font-weight:600;">Related Articles</h3><div class="qct-related-grid" id="relatedArticles"></div></div>
+<script>fetch('../articles.json').then(r=>r.json()).then(a=>{var c=document.getElementById('relatedArticles');if(!a)return;var h='';a.slice(0,3).forEach(x=>{h+='<a class="qct-related-card" style="display:block;text-decoration:none;color:inherit;cursor:pointer;" href="../blog/'+x.slug+'.html"><h4>'+x.title+'</h4><p>'+x.excerpt+'</p></a>';});c.innerHTML=h;}).catch(()=>{});</script>
+<div style="margin-top:40px;"><h3 style="margin-bottom:20px;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:#999;font-weight:600;">Visualization</h3><div style="background:#fff;border-radius:16px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);"><canvas id="paydayChart" width="600" height="300" style="width:100%;max-width:600px;height:auto;margin:0 auto;display:block;"></canvas></div></div>
+<script>
+function drawPaydayChart(){
+  var c=document.getElementById('paydayChart');if(!c)return;
+  var ctx=c.getContext('2d');ctx.clearRect(0,0,c.width,c.height);
+  var labels=['Payday Loan','Credit Card','Personal Loan','Credit Union PAL'];
+  var rates=[391,25,12,28];
+  var colors=['#d9534f','#f0c040','#28a745','#5bc0de'];
+  var max=Math.max.apply(null,rates);
+  var barW=80,gap=40,base=250;
+  labels.forEach(function(l,i){
+    var h=(rates[i]/max)*200;
+    ctx.fillStyle=colors[i];ctx.fillRect(40+i*(barW+gap),base-h,barW,h);
+    ctx.fillStyle='#333';ctx.font='12px Inter';ctx.textAlign='center';
+    ctx.fillText(rates[i]+'%',40+i*(barW+gap)+barW/2,base-h-10);
+    ctx.fillText(l,40+i*(barW+gap)+barW/2,base+20);
+  });
+}
+drawPaydayChart();
+</script>
+
+<div class="qct-ad-slot" id="tool_bottom" data-ad-slot="tool_bottom"></div>
+</main>
+<footer class="qct-footer">
+  <div class="qct-container">
+    <div class="qct-footer-grid">
+      <div class="qct-footer-col"><h4>Tools</h4><ul>
+        <li><a href="./personal-loan-calculator.html">Personal Loan</a></li>
+        <li><a href="./payday-loan-calculator.html">Payday Loan</a></li>
+        <li><a href="./auto-loan-calculator.html">Auto Loan</a></li>
+        <li><a href="./mortgage-calculator.html">Mortgage</a></li>
+      </ul></div>
+      <div class="qct-footer-col"><h4>Resources</h4><ul><li><a href="../blog/index.html">Blog</a></li><li><a href="../faq.html">FAQ</a></li></ul></div>
+      <div class="qct-footer-col"><h4>Legal</h4><ul>
+        <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../terms.html">Terms</a></li>
+        <li><a href="../disclaimer.html">Disclaimer</a></li>
+        <li><a href="../disclosure.html">Ad Disclosure</a></li>
+      </ul></div>
+      <div class="qct-footer-col"><h4>About</h4><ul><li><a href="../about.html">About</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="qct-footer-bottom">
+      <p class="qct-disclaimer">Not financial advice. For educational purposes only.</p>
+      <p>QuickLoanTool.org. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script>
+// Sticky: save last calculation to localStorage
+(function(){
+  var inputs=document.querySelectorAll('input, select');
+  inputs.forEach(function(inp){
+    var key='qct_'+location.pathname+'_'+inp.id;
+    var saved=localStorage.getItem(key);
+    if(saved!==null && inp.type!=='button'){inp.value=saved;}
+    inp.addEventListener('change',function(){localStorage.setItem(key,inp.value);});
+  });
+})();
+</script>
+<script>function qctResetForm(){document.querySelectorAll('input, select').forEach(function(el){if(el.type!=='button'){el.value='';localStorage.removeItem('qct_'+location.pathname+'_'+el.id);}});document.getElementById('result').style.display='none';}</script>
+
+<script>
+(function(){
+  var key='qct_comparison_'+location.pathname;
+  window.qctSaveComparison=function(){
+    var result=document.getElementById('result');
+    if(!result||result.style.display==='none'){alert('Calculate first before saving.');return;}
+    var data=JSON.parse(localStorage.getItem(key)||'[]');
+    var now=new Date().toLocaleString();
+    var snapshot={time:now,inputs:{}};
+    document.querySelectorAll('input, select').forEach(function(el){if(el.id)snapshot.inputs[el.id]=el.value;});
+    var resText=result.innerText.replace(/\s+/g,' ').substring(0,200);
+    snapshot.result=resText;
+    data.push(snapshot);
+    if(data.length>5)data.shift();
+    localStorage.setItem(key,JSON.stringify(data));
+    alert('Saved! You have '+data.length+' comparison(s).');
+  };
+  window.qctShowHistory=function(){
+    var data=JSON.parse(localStorage.getItem(key)||'[]');
+    var area=document.getElementById('comparisonArea');
+    var list=document.getElementById('comparisonList');
+    if(!data.length){list.innerHTML='<p style="color:#888;">No saved comparisons yet.</p>';}
+    else{
+      var h='<table style="width:100%;font-size:.85rem;border-collapse:collapse;"><tr style="border-bottom:1px solid #ddd;"><th style="text-align:left;padding:8px;">Time</th><th style="text-align:left;padding:8px;">Result</th><th style="text-align:left;padding:8px;">Action</th></tr>';
+      data.forEach(function(item,i){
+        h+='<tr style="border-bottom:1px solid #eee;"><td style="padding:8px;">'+item.time+'</td><td style="padding:8px;">'+item.result+'</td><td style="padding:8px;"><button onclick="qctLoadComparison('+i+')" style="background:#f0c040;border:none;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:.8rem;">Load</button></td></tr>';
+      });
+      h+='</table>';
+      list.innerHTML=h;
+    }
+    area.style.display=area.style.display==='none'?'block':'none';
+  };
+  window.qctLoadComparison=function(idx){
+    var data=JSON.parse(localStorage.getItem(key)||'[]');
+    if(!data[idx])return;
+    var inputs=data[idx].inputs;
+    for(var k in inputs){var el=document.getElementById(k);if(el)el.value=inputs[k];}
+    alert('Inputs restored. Click Calculate to update results.');
+  };
+  window.qctExportReport=function(){
+    var result=document.getElementById('result');
+    if(!result||result.style.display==='none'){alert('Calculate first before exporting.');return;}
+    var text='QuickLoanTool.org Report\nGenerated: '+new Date().toLocaleString()+'\nPage: '+document.title+'\n\nInputs:\n';
+    document.querySelectorAll('input, select').forEach(function(el){if(el.id&&el.value)text+=el.id+': '+el.value+'\n';});
+    text+='\nResults:\n'+result.innerText.replace(/\s+/g,'\n');
+    var blob=new Blob([text],{type:'text/plain'});
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='loan-report.txt';a.click();
+  };
+})();
+</script>
+
+</body></html>
